@@ -25,7 +25,7 @@ public class Expenses {
         double bigExpense = 10.0;
         int bigCount = 0;
 
-        System.out.println("Unesi troškove u eurima, o za kraj.");
+        System.out.println("Unesi troškove u eurima, 0 za kraj.");
 
         while (true) {
             System.out.print("Trošak: ");
@@ -56,16 +56,16 @@ public class Expenses {
         } else{
             System.out.println("");
             System.out.print("");
-            System.out.printf("%-12s %8d%n", "Troškovi: ", count);
-            printRow("Najmani: ", min);
-            printRow("Najveci: ", max);
-            printRow("Ukupno: ", total);
-            printRow("Prosjek: ", total / count);
+            System.out.printf("%-12s %8d%n", "Troškovi:", count);
+            printRow("Najmanji:", min);
+            printRow("Najveći:", max);
+            printRow("Ukupno:", total);
+            printRow("Prosjek:", total / count);
             System.out.printf("Većih od %.2f eura: %d%n", bigExpense, bigCount);
 
             if (total > budget) {
                 System.out.printf("Budžet je premašen za %.2f eura.%n", total - budget);
-            } else if (total > budget + 0.8) {
+            } else if (total > budget * 0.8) {
                 System.out.println("Blizu si granice budžeta.");
             } else {
                 System.out.println("Unutar budžeta si.");
@@ -78,10 +78,10 @@ public class Expenses {
             System.out.println("");
 
             switch(bigCount) {
-                case 0: System.out.println("Ocjena tjedna: štedljivo"); break;
+                case 0: System.out.println("Ocjena tjedna: štedljivo."); break;
                 case 1:
-                case 2: System.out.println("Ocjena tjedna: umjereno"); break;
-                default: System.out.println("Ocjena tjedna: rastrošno"); break;
+                case 2: System.out.println("Ocjena tjedna: umjereno."); break;
+                default: System.out.println("Ocjena tjedna: rastrošno."); break;
             }
         }
         input.nextLine();
